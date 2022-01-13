@@ -10,7 +10,7 @@ A simple script to join your regular Zoom meetings faster, specially useful for 
 
 ## Configuration File
 
-The `config.json` files contains the configurations for Zooom. Following keys are required:
+The `config.json` file contains the configurations for Zooom. Following keys are required:
 
 - `sources`: Array of sources. Each source is either the location of file containing an array of Meeting objects or a http(s) endpoint that return an array of Meeting objects as the body
 - `buffer`:
@@ -30,6 +30,10 @@ Example:
 }
 ```
 *Time & Duration are in HH:MM format*
+
+Configuration file path can be set using `ZOOOM_CONFIG` environment variable. *(Requires >= v1.0.1)*
+
+Example: `ZOOOM_CONFIG="~/.config/zooom.json"`
 
 ## Meeting Object
 

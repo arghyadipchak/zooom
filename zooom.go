@@ -166,7 +166,12 @@ func open(url string) error {
 }
 
 func main() {
-	config := read_config("config.json")
+	config_file := "config.json"
+	val, pres := os.LookupEnv("ZOOOM_CONFIG")
+	if pres {
+		config_file = val
+	}
+	config := read_config(config_file)
 	meet := choose_meet(find_meets(config))
 	if meet.Name == "" {
 		fmt.Println("No Meeting found!")
